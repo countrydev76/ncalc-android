@@ -1,0 +1,43 @@
+/**
+ * uploadArchives
+ *
+ * - local repository 설정
+ *   https://developer.android.com/studio/build/dependencies?utm_source=android-studio#dependency_configurations
+ *   https://medium.com/@goinhacker/%EC%9A%B4%EC%98%81-%EC%9E%90%EB%8F%99%ED%99%94-1-%EB%B9%8C%EB%93%9C-%EC%9E%90%EB%8F%99%ED%99%94-by-gradle-7630c0993d09
+ *
+ * - 업로드 명령어 : $ gradlew :nmagma:uploadArchives
+ * - jar 실행하기 : java -jar ~/Documents/.mavenRepository/io/jopitel/kotlin/ncalc/ncalcpush/1.0.0/ncalcpush-1.0.0.jar
+ */
+apply plugin: 'maven'
+group uploadParamGroupId
+version uploadParamVersion
+uploadArchives {
+  group 'my'
+  repositories {
+    mavenDeployer {
+      repository(url: uploadParamLocalRepositoryUrl)
+    }
+    // with ssh
+//    repository( url: uploadParamRemoteRepositoryUrl) {
+//      authentication(userName: "countrydev76", password: "1111")
+//    }
+
+//    ivy {
+//      credentials {
+//        username "username"
+//        password "pw"
+//      }
+//      url extIvyRemoteRepositoryUrl
+//    }
+  }
+
+//  println '----------------------------------------------'
+//  println "- uploadArchives"
+//  println '----------------------------------------------'
+//  println "group                : $group"
+//  println "version              : $version"
+//  println "localRepositoryUrl   : $uploadParamLocalRepositoryUrl"
+//  println "remoteRepositoryUrl  : $uploadParamLocalRepositoryUrl"
+//  println '----------------------------------------------'
+//  println ''
+}

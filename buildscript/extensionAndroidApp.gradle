@@ -1,0 +1,53 @@
+//group = "io.jopitel.android.nproject"
+//version = "0.0.1"
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+  compileSdkVersion androidParamCompileSdk
+  defaultConfig {
+    applicationId androidParamApplicationId
+    minSdkVersion androidParamMinSdk
+    targetSdkVersion androidParamTargetSdk
+    versionCode androidParamVersionCode
+    versionName androidParamVersionName
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  // hjjo:20171108 - For using lambda
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+task displayInfo {
+  group 'my'
+  doLast {
+    println '----------------------------------------------'
+    println "- displayInfo"
+    println '----------------------------------------------'
+    println "taskGroup                  : $group"
+    println "rootDir                    : $rootProject.rootDir"
+    println "buildDir                   : $rootProject.buildDir"
+    println "javaVersion                : ${System.getProperty("java.version")}"
+    println "androidParamApplicationId  : $androidParamApplicationId"
+    println "androidParamCompileSdk     : $androidParamCompileSdk"
+    println "androidParamMinSdk         : $androidParamMinSdk"
+    println "androidParamTargetSdk      : $androidParamTargetSdk"
+    println "androidParamVersionCode    : $androidParamVersionCode"
+    println "androidParamVersionName    : $androidParamVersionName"
+    println '----------------------------------------------\n'
+  }
+}
+

@@ -1,0 +1,53 @@
+//group 'io.jopitel.android.ncalc'
+//version '0.0.1'
+
+/**
+ * android
+ */
+ext {
+  // app info
+  androidParamVersionCode = 19010812
+  androidParamVersionName = '0.0.1'
+  // android sdk
+  androidParamCompileSdk = VERSIONS.compileSdk
+  androidParamTargetSdk = VERSIONS.targetSdk
+  androidParamMinSdk = VERSIONS.minSdk
+}
+apply from: '../buildscript/extensionAndroidModule.gradle'
+
+/**
+ * dependencies
+ */
+dependencies {
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  // kotlin
+  implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$VERSIONS.kotlin"
+  // support
+  implementation 'com.android.support:appcompat-v7:28.0.0'
+  // implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+  // test
+  testImplementation 'junit:junit:4.12'
+  androidTestImplementation 'com.android.support.test:runner:1.0.2'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+  // package
+  implementation project(':ncalcnative')
+}
+
+/**
+ * upload
+ */
+ext {
+  uploadParamGroupId = gGroupId
+  uploadParamVersion = gVersion
+  uploadParamLocalRepositoryUrl = ENV.maven.localRepoUrl
+  uploadParamRemoteRepositoryUrl = ENV.maven.remoteRepoUrl
+}
+apply from: '../buildscript/extensionUploadArchives.gradle'
+
+/**
+ * dokka
+ */
+ext {
+  dokkaParamSourceUrl = "${ENV.githubProjectUrl}/tree/master/src/main/kotlin"
+}
+apply from: '../buildscript/extensionDokka.gradle'

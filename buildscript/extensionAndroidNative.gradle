@@ -1,0 +1,117 @@
+//group = "io.jopitel.android.nproject"
+//version = "0.0.1"
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+  compileSdkVersion androidParamCompileSdk
+  defaultConfig {
+    minSdkVersion androidParamMinSdk
+    targetSdkVersion androidParamTargetSdk
+    versionCode androidParamVersionCode
+    versionName androidParamVersionName
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    sourceSets {
+      main.java.srcDirs += 'src/main/kotlin'
+      test.java.srcDirs += 'src/test/kotlin'
+      androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    externalNativeBuild {
+      cmake {
+        //cppFlags "-std=c++14 -frtti -fexceptions"
+        cppFlags "-std=c++14 -frtti -fexceptions"
+        // https://developer.android.com/ndk/guides/cmake.html#variables
+        // Use the following syntax when passing arguments to variables:
+        // arguments "-DVAR_NAME=VALUE"
+        // ------------------- ANSWER -------------------
+        arguments "-DANDROID_STL=c++_shared"//, "-DANDROID_PLATFORM=android-16"
+      }
+    }
+
+    ndk {
+      // Specifies the ABI configurations of your native
+      // libraries Gradle should build and package with your APK.
+      // abiFilters 'armeabi-v7a', 'x86' // , 'x86_64', 'arm64-v8a'
+      //stl "c++_static"
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  externalNativeBuild {
+    cmake {
+      path "src/main/cpp/CMakeLists.txt"
+      //path "CMakeLists.txt"
+    }
+  }
+
+  // hjjo:20171108 - For using lambda
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  // hjjo:20171108 - For using jniLibs
+  repositories {
+    mavenCentral()
+    flatDir {
+      dirs 'libs'
+    }
+  }
+
+  // https://stackoverflow.com/questions/34802667/unit-test-java-class-that-loads-native-library/46439968#46439968
+  /*
+  testOptions {
+    unitTests {
+      all {
+        def libpath = '' + projectDir + '/build/intermediates/cmake/debug/obj/armeabi-v7a' + ':/home/developer/my-project/some-sdk/lib'
+        environment 'LD_LIBRARY_PATH', libpath
+      }
+    }
+  }
+  */
+
+  /*
+  sourceSets.main {
+    jniLibs.srcDir 'src/main/libs'
+    jni.srcDirs = []
+  }
+
+  dexOptions {
+    jumboMode true
+    javaMaxHeapSize "4g"
+  }
+  useLibrary 'org.apache.http.legacy'
+  */
+}
+
+task displayInfo {
+  group 'my'
+  doLast {
+    println '----------------------------------------------'
+    println "- displayInfo"
+    println '----------------------------------------------'
+    println "taskGroup                  : $group"
+    println "rootDir                    : $rootProject.rootDir"
+    println "buildDir                   : $rootProject.buildDir"
+    println "javaVersion                : ${System.getProperty("java.version")}"
+    println "androidParamApplicationId  : native"
+    println "androidParamCompileSdk     : $androidParamCompileSdk"
+    println "androidParamMinSdk         : $androidParamMinSdk"
+    println "androidParamTargetSdk      : $androidParamTargetSdk"
+    println "androidParamVersionCode    : $androidParamVersionCode"
+    println "androidParamVersionName    : $androidParamVersionName"
+    println '----------------------------------------------\n'
+  }
+}
+

@@ -1,0 +1,36 @@
+//group = "io.jopitel.android.nproject"
+//version = "0.0.1"
+
+task displayVariable {
+  group 'my'
+  doLast {
+    println '---------------------------------'
+    println '- INFO'
+    println '---------------------------------'
+    println 'group          : ' + gGroupId
+    println 'version        : ' + gVersion
+    println 'rootDir        : ' + rootProject.rootDir
+    println 'buildDir       : ' + rootProject.buildDir
+    println 'java           : ' + System.getProperty("java.version")
+    println 'kotlin         : ' + VERSIONS.kotlin
+    println 'gradle_plugin  : ' + VERSIONS.gradlePlugin
+    println ''
+
+    println '---------------------------------'
+    println '- VERSIONS'
+    println '---------------------------------'
+    println VERSIONS.toString()
+    println ''
+
+    println '---------------------------------'
+    println '- ENV'
+    println '---------------------------------'
+    println '- maven'
+    println ENV.maven
+    println '- ivy'
+    println ENV.ivy
+    println '- github'
+    println ENV.github
+    println ''
+  }
+}

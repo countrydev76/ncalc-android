@@ -1,0 +1,1 @@
+include ':app', ':ncalcnative', ':ncalccore', ':ncalcwrap', ':ncalcapp'
