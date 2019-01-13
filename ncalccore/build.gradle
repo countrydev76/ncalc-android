@@ -13,6 +13,7 @@ ext {
   androidParamTargetSdk = VERSIONS.targetSdk
   androidParamMinSdk = VERSIONS.minSdk
 }
+
 apply from: '../buildscript/extensionAndroidModule.gradle'
 
 /**
@@ -51,3 +52,45 @@ ext {
   dokkaParamSourceUrl = "${ENV.githubProjectUrl}/tree/master/src/main/kotlin"
 }
 apply from: '../buildscript/extensionDokka.gradle'
+
+/**
+ * bintrayUpload
+ */
+
+
+//Add these lines to publish library to bintray. This is the readymade scripts made by github user nuuneoi to make uploading to bintray easy.
+//Place it at the end of the file
+// apply from: '../buildscript/extensionBintrayUpload.gradle'
+/**
+ * - Android 라이브러리 jCenter 배포하기
+ *   http://www.junil.kim/deploy-android-library-to-jcenter/
+ * - Publishing your Android, Kotlin or Java library to jCenter from Android Studio
+ *   https://android.jlelse.eu/publishing-your-android-kotlin-or-java-library-to-jcenter-from-android-studio-1b24977fe450
+ *
+ * - 6 easy steps to upload your Android library to Bintray/JCenter
+ *   https://medium.com/@anitaa_1990/6-easy-steps-to-upload-your-android-library-to-bintray-jcenter-59e6030c8890
+ *   https://github.com/novoda/bintray-release
+ *
+ * - Android Module을 Bintray(JCenter)에 배포하는 방법
+ *   https://thdev.tech/androiddev/2016/09/01/Android-Bintray(JCenter)-Publish/
+ *
+ * - Maven Repository(.m2/settings.xml setup)
+ *   https://www.jfrog.com/confluence/display/RTF/Maven+Repository
+ *
+ * - bintray-example
+ *   https://github.com/bintray/bintray-examples
+ *   https://github.com/bintray/bintray-examples/tree/master/gradle-bintray-plugin-examples
+ *
+ * $ gradle clean build bintrayUpload -PbintrayUser=countrydev76 -PbintrayKey=46b8f5530c07758faafd3d376b933ad63ac6c705 -PdryRun=false
+ */
+apply plugin: 'com.novoda.bintray-release'
+publish {
+  userOrg = 'countrydev76'
+  groupId = 'io.jopitel.android.ncalc'
+  artifactId = 'ncalccore'
+  publishVersion = '0.0.1'
+  desc = '4 rules for andorid core'
+  website = 'https://github.com/countrydev76/ncalc-android'
+  issueTracker = "https://github.com/countrydev76/ncalc-android/issues"
+  repository = "https://github.com/countrydev76/ncalc-android.git"
+}

@@ -1,0 +1,39 @@
+/**
+ * https://android.jlelse.eu/publishing-your-android-kotlin-or-java-library-to-jcenter-from-android-studio-1b24977fe450
+ * -> github : https://github.com/wajahatkarim3/MediumClap-Android
+ * https://jojoldu.tistory.com/161
+ *
+ */
+
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+ext {
+
+  bintrayRepo = "ncalc-android"
+  bintrayName = "io.jopitel.android.ncalc"
+
+  publishedGroupId = 'io.jopitel.android.ncalc'
+  libraryName = 'ncalccore'
+  artifact = 'ncalccore'
+
+  libraryDescription = '4 rules for andorid core'
+
+  siteUrl = 'https://github.com/countrydev76/ncalc-android'
+  gitUrl = 'https://github.com/countrydev76/ncalc-android.git'
+
+  libraryVersion = '0.0.1'
+
+  developerId = 'countrydev76'
+  developerName = 'magmajo'
+  developerEmail = 'countrydev76@gmail.com'
+
+  licenseName = 'The Apache Software License, Version 2.0'
+  licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+  allLicenses = ["Apache-2.0"]
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+  apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/install.gradle'
+  apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/bintray.gradle'
+}

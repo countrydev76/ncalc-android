@@ -1,11 +1,11 @@
 # project.ncalc - nCalc 개발 가이드
 
 ```shell
-_____                    __ __
+ _____                    __ __
 |     |_.-----..---.-..--|  |__|.-----..-----.
 |       |  _  ||  _  ||  _  |  ||     ||  _  |     __      __      __
 |_______|_____||___._||_____|__||__|__||___  |    |__|    |__|    |__|
-|_____|
+                                       |_____|
 ```
 
 요약 설명 ...
@@ -19,8 +19,8 @@ _____                    __ __
 > 링크 : [none]()
 
 ## 학습 가이드
-- [none]()
-
+ - [none]()
+ 
 ## 시작하기
 
 ### 1. 설치하기
@@ -73,23 +73,23 @@ _____                    __ __
 ...
 
 ## 참고사이트
-- 메인
-- [none](http://about)
+  - 메인
+    - [none](http://about)
 
-- 문서
-- [none](http://about)
+  - 문서
+    - [none](http://about)
 
-- 소스
-- [none](http://about)
+  - 소스
+    - [none](http://about)
 
-- 유틸
-- [none](http://about)​
+  - 유틸
+    - [none](http://about)​
 
-- 블로그
-- [none](http://about)​
+  - 블로그
+    - [none](http://about)​
 
-- 유투브
-- [none](http://about)
-
-- 쇼핑
-- [none](http://about)
+  - 유투브
+    - [none](http://about)
+    
+  - 쇼핑
+    - [none](http://about)

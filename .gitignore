@@ -65,9 +65,9 @@ fastlane/test_output
 fastlane/readme.md
 
 # my - add github base
-.idea/sonarlint
 .externalNativeBuild
 .mavenRepository
 /docs
+.idea/sonarlint
 
 

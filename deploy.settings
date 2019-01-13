@@ -1,0 +1,7 @@
+siteUrl = 'https://github.com/countrydev76/ncalc-android'
+gitUrl = 'https://github.com/countrydev76/ncalc-android.git'
+version = '0.0.1'
+groupId = 'io.jopitel.android.ncalc'
+licenses = ['MIT']
+id = 'ncalccore'
+name = 'ncalccore'
