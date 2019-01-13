@@ -25,6 +25,8 @@ buildscript {
     classpath 'com.novoda:bintray-release:0.9'
 //    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
 //    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    // TODO: coveralls with jacoco
+    classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.2'
   }
 }
 
@@ -36,6 +38,20 @@ allprojects {
     maven { url ENV.maven.localRepoUrl }
     //ivy { url ENV.ivy.localRepoUrl }
   }
+}
+
+subprojects {
+  dependencies {
+  }
+//  jacocoTestReport {
+//    group 'my'
+//    description "Generate Jacoco coverage reports."
+//    reports {
+//      html.enabled = true
+//      xml.enabled = true
+//      csv.enabled = false
+//    }
+//  }
 }
 
 task clean(type: Delete) {

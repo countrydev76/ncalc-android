@@ -55,13 +55,7 @@ apply from: '../buildscript/extensionDokka.gradle'
 
 /**
  * bintrayUpload
- */
-
-
-//Add these lines to publish library to bintray. This is the readymade scripts made by github user nuuneoi to make uploading to bintray easy.
-//Place it at the end of the file
-// apply from: '../buildscript/extensionBintrayUpload.gradle'
-/**
+ *
  * - Android 라이브러리 jCenter 배포하기
  *   http://www.junil.kim/deploy-android-library-to-jcenter/
  * - Publishing your Android, Kotlin or Java library to jCenter from Android Studio
@@ -83,6 +77,7 @@ apply from: '../buildscript/extensionDokka.gradle'
  *
  * $ gradle clean build bintrayUpload -PbintrayUser=countrydev76 -PbintrayKey=46b8f5530c07758faafd3d376b933ad63ac6c705 -PdryRun=false
  */
+// apply from: '../buildscript/extensionBintrayUpload.gradle'
 apply plugin: 'com.novoda.bintray-release'
 publish {
   userOrg = 'countrydev76'
@@ -94,3 +89,10 @@ publish {
   issueTracker = "https://github.com/countrydev76/ncalc-android/issues"
   repository = "https://github.com/countrydev76/ncalc-android.git"
 }
+
+/**
+ * coveralls
+ * - https://jojoldu.tistory.com/275
+ * - https://proandroiddev.com/unified-code-coverage-for-android-revisited-44789c9b722f
+ */
+apply from: '../buildscript/extensionCoveralls.gradle'
