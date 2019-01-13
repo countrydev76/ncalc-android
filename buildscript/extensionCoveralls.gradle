@@ -22,7 +22,7 @@ coveralls {
 
 task jacocoRootReport(type: JacocoReport) {
   group 'my'
-  description "Generate Jacoco coverage reports."
+  description "Generate Jacoco coverage reports..."
 
   reports {
     html.enabled = true
