@@ -1,5 +1,5 @@
-//group 'io.jopitel.android.ncalc'
-//version '0.0.1'
+group gGroupId
+version gVersion
 
 /**
  * android
@@ -31,7 +31,6 @@ dependencies {
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
   // package
-  implementation project(':ncalcnative')
 }
 
 /**
@@ -75,19 +74,19 @@ apply from: '../buildscript/extensionDokka.gradle'
  *   https://github.com/bintray/bintray-examples
  *   https://github.com/bintray/bintray-examples/tree/master/gradle-bintray-plugin-examples
  *
- * $ gradle clean build bintrayUpload -PbintrayUser=countrydev76 -PbintrayKey=46b8f5530c07758faafd3d376b933ad63ac6c705 -PdryRun=false
+ * $ gradle build bintrayUpload -PbintrayUser=countrydev76 -PbintrayKey=46b8f5530c07758faafd3d376b933ad63ac6c705 -PdryRun=false --info
  */
 // apply from: '../buildscript/extensionBintrayUpload.gradle'
 apply plugin: 'com.novoda.bintray-release'
 publish {
   userOrg = 'countrydev76'
-  groupId = 'io.jopitel.android.ncalc'
+  groupId = gGroupId
   artifactId = 'ncalccore'
-  publishVersion = '0.0.1'
+  publishVersion = gVersion
   desc = '4 rules for andorid core'
-  website = 'https://github.com/countrydev76/ncalc-android'
-  issueTracker = "https://github.com/countrydev76/ncalc-android/issues"
-  repository = "https://github.com/countrydev76/ncalc-android.git"
+  website = "${gGithubUrl}"
+  issueTracker = "${gGithubUrl}/issues"
+  repository = "${gGithubUrl}.git"
 }
 
 /**

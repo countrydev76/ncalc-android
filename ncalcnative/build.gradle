@@ -1,5 +1,5 @@
-group 'io.jopitel.android.ncalc'
-version '0.0.1'
+group gGroupId
+version gVersion
 
 /**
  * android

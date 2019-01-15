@@ -1,12 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-ext {
-  gGroupId = 'io.jopitel.android.ncalc'
-  gVersion = '0.0.1'
-}
-
 apply from: './buildscript/extVariablePlugin.gradle'
 buildscript {
+  ext {
+    gGroupId = 'io.jopitel.android.ncalc'
+    gVersion = '0.0.2'
+    gGithubUrl = 'https://github.com/countrydev76/ncalc-android'
+  }
   apply from: './buildscript/extVariablePlugin.gradle'
   repositories {
     google()

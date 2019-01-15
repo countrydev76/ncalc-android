@@ -13,6 +13,7 @@ ext.VERSIONS = [
     spotlessPlugin      : '3.16.0',
     versionPlugin       : '0.20.0',
     bintrayPlugin       : '0.9',
+    googleService       : '4.0.2',
 
     // kotlin
     kotlin              : '1.3.11',
@@ -43,9 +44,9 @@ ext.VERSIONS = [
     fuel                : '<latest-version>',
     http4k              : '3.104.0',
     okhttp3             : '3.12.1',   // http://square.github.io/okhttp/
-    rxjava              : '2+',
-    rxkotlin            : '2+',
-    rxandroid           : '2+',
+    rxjava              : '2.2.5',
+    rxkotlin            : '2.3.0',
+    rxandroid           : '2.1.0',
     //coroutines          : '0.24.0', // 0.25.0 -> min-sdk(26)
 
     // - firebase
@@ -58,6 +59,19 @@ ext.VERSIONS = [
 
     // - message
     grpc                : '1.17.1',
+
+    // android lib
+    // - base
+    easypermission      : '1.3.0',
+    tedpermission       : '2.2.2',
+
+    // - ble
+    altbeacon           : '2.15.4',
+    eddystone           : '1.0.0',
+
+    // android ui
+    anko                : '0.10.8',
+    materialdialog      : "2+",
 ]
 
 // "file://$rootProject.rootDir/.mavenRepository", 'file:///Users/magmajo/Documents/.mavenRepository'

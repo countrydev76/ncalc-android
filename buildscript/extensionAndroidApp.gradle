@@ -6,6 +6,32 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+  // - 자동서명 방법1 : 코드 공유시 다른 사람이 내 키 정보를 볼수 있다
+  signingConfigs {
+    config {
+      keyAlias 'jopitelkey'
+      keyPassword 'tkrkfWH#0070'
+      storeFile file('/Users/magmajo/.android/jopitel.jks')
+      storePassword 'tkrkfWH#0070'
+    }
+  }
+  // https://developer.android.com/studio/publish/app-signing?hl=ko
+  // - 수동서명 : Build -> Generate Signed APK 실행
+  /*
+    def keystorePropertiesFile = rootProject.file("keystore.properties")
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    signingConfigs {
+      config {
+        // - 자동서명 방법2 : 코드 공유시 다른 사람이 내 키 정보가 보호 된다
+        keyAlias keystoreProperties['keyAlias']
+        keyPassword keystoreProperties['keyPassword']
+        storeFile file(keystoreProperties['storeFile'])
+        storePassword keystoreProperties['storePassword']
+      }
+    }
+  */
+
   compileSdkVersion androidParamCompileSdk
   defaultConfig {
     applicationId androidParamApplicationId
@@ -28,6 +54,15 @@ android {
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  dexOptions {
+    jumboMode true
+    javaMaxHeapSize "4g"
   }
 }
 
