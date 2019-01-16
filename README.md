@@ -1,11 +1,10 @@
-# project.ncalc - nCalc 개발 가이드
+# nCalc 개발 가이드
 
 ```shell
- _____                    __ __
-|     |_.-----..---.-..--|  |__|.-----..-----.
-|       |  _  ||  _  ||  _  |  ||     ||  _  |     __      __      __
-|_______|_____||___._||_____|__||__|__||___  |    |__|    |__|    |__|
-                                       |_____|
+        ______         __       
+.-----.|      |.---.-.|  |.----.
+|     ||   ---||  _  ||  ||  __|
+|__|__||______||___._||__||____|
 ```
 
 요약 설명 ...
@@ -21,7 +20,7 @@
 ## 학습 가이드
  - [none]()
  
-## 작엊중...
+## 작업 중...
 macosx
 http://seorenn.blogspot.com/2018/10/macos-timemachine-how-to-delete-old-backup.html
 
@@ -37,21 +36,24 @@ https://medium.com/@alvin.h/vue-js-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8
  
 iOS
 https://devmjun.github.io/archive/HowToCreateFrameWork 
+
+Git
+https://git-scm.com/book/en/v2/Git-Basics-Tagging
  
  
 ## 시작하기
 
 ### 1. 설치하기
 
-#### 1.1. Get AssertJ Core assertions
-우리는 민주 주의에 역사적 사명에 띠고 이땅에 태어났다.
+#### 1.1. xxxx
+eeeeee
 ```cpp
 ```
 
 ### 2. 설정하기
 
-#### 2.1. Get AssertJ Core assertions
-우리는 민주 주의에 역사적 사명에 띠고 이땅에 태어났다.
+#### 2.1. xxxx
+eeeee
 ```cpp
 ```
 

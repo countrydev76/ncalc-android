@@ -3,7 +3,9 @@ package io.jopitel.android.ncalc.ncalccore
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import android.util.Log
+import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -16,6 +18,16 @@ import org.junit.runner.RunWith
 class ExampleInstrumentedTest {
   val TAG = "[hjjo][ncalc][ncalccore]"
   var PACKAGE_NAME = "io.jopitel.android.ncalc.ncalccore.test"
+
+  @Before // 각 테스트마다 인스턴스가 매번 다시 생성되어 독립적인 테스트 가능
+  fun setup() {
+    Log.d(TAG, "setup")
+  }
+
+  @After // 후처리 작업
+  fun teardown() {
+    Log.d(TAG, "teardown");
+  }
 
   @Test
   fun useAppContext() {

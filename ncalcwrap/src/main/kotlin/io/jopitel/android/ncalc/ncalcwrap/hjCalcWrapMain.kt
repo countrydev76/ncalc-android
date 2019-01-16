@@ -7,17 +7,30 @@ import io.jopitel.android.ncalc.ncalccore.hjCalcSingleton
 import io.jopitel.android.ncalc.ncalcnative.hjCalcNative
 
 /**
- *
+ * hjCalcWrapMain class.
  */
 object hjCalcWrapMain {
+  /**
+   * PlatformType enum class.
+   * @property type String
+   * @constructor
+   */
   enum class PlatformType(val type: String) {
+    /**
+     * Desktop
+     */
     Desktop("Desktop"),
+    /**
+     * Mobile
+     */
     Mobile("Mobile")
   }
 
   /**
+   * hjCalcWrapMain main method.
    *
    * @param args Array<String>
+   * @param platform PlatformType
    */
   @JvmStatic fun main(args: Array<String>, platform: PlatformType = PlatformType.Mobile) {
     val left = 4

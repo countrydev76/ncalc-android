@@ -21,8 +21,11 @@ package io.jopitel.android.ncalc.ncalcwrap
  * @param args : support multi parameter
  */
 object hjCalcWrapHello {
-  @JvmStatic
-  fun main(args: Array<String>) {
+  /**
+   * hjCalcWrapHello main method.
+   * @param args Array<String>
+   */
+  @JvmStatic fun main(args: Array<String>) {
     println("Hello, World! - kotlin")
   }
 }

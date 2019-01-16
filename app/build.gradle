@@ -2,16 +2,16 @@
  * android
  */
 ext {
-  androidParamApplicationId = "io.jopitel.android.ncalc"
+  androidParamApplicationId = "${gGroupId}.app"
   // app info
-  androidParamVersionCode = 19010812
-  androidParamVersionName = '0.0.1'
+  androidParamVersionCode = gVersionCode
+  androidParamVersionName = gVersion
   // android sdk
   androidParamCompileSdk = VERSIONS.compileSdk
   androidParamTargetSdk = VERSIONS.targetSdk
   androidParamMinSdk = VERSIONS.minSdk
 }
-apply from: '../buildscript/extensionAndroidAppNative.gradle'
+apply from: "${rootProject.rootDir}/buildscript/extensionAndroidAppNative.gradle"
 
 /**
  * dependencies

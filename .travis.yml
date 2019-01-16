@@ -1,5 +1,6 @@
 ## https://jojoldu.tistory.com/275
 ## https://github.com/jaredsburrows/android-gradle-kotlin-app-template
+## https://docs.travis-ci.com/user/languages/android/
 language: android
 
 jdk:
@@ -36,3 +37,12 @@ after_success:
 
 #notifications:
 #  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
+
+#deploy:
+#  provider: script
+#  skip_cleanup: true
+#  script: "sh script/deploy.sh"
+#  on:
+#    branch:
+#      - dev
+#      - master

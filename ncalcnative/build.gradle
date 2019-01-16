@@ -1,19 +1,17 @@
-group gGroupId
-version gVersion
-
 /**
  * android
  */
 ext {
+  androidParamApplicationId = project.name
   // app info
-  androidParamVersionCode = 19010812
-  androidParamVersionName = '0.0.1'
+  androidParamVersionCode = gVersionCode
+  androidParamVersionName = gVersion
   // android sdk
   androidParamCompileSdk = VERSIONS.compileSdk
   androidParamTargetSdk = VERSIONS.targetSdk
   androidParamMinSdk = VERSIONS.minSdk
 }
-apply from: '../buildscript/extensionAndroidNative.gradle'
+apply from: "${rootProject.rootDir}/buildscript/extensionAndroidNative.gradle"
 
 /**
  * dependencies
@@ -30,22 +28,3 @@ dependencies {
   androidTestImplementation 'com.android.support.test:runner:1.0.2'
   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
-
-/**
- * upload
- */
-ext {
-  uploadParamGroupId = gGroupId
-  uploadParamVersion = gVersion
-  uploadParamLocalRepositoryUrl = ENV.maven.localRepoUrl
-  uploadParamRemoteRepositoryUrl = ENV.maven.remoteRepoUrl
-}
-apply from: '../buildscript/extensionUploadArchives.gradle'
-
-/**
- * dokka
- */
-ext {
-  dokkaParamSourceUrl = "${ENV.githubProjectUrl}/tree/master/src/main/kotlin"
-}
-apply from: '../buildscript/extensionDokka.gradle'

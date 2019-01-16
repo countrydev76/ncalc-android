@@ -9,9 +9,11 @@ import io.jopitel.android.ncalc.ncalccore.hjCalcEx
 import io.jopitel.android.ncalc.ncalccore.hjCalcMain
 import io.jopitel.android.ncalc.ncalcnative.hjCalcNative
 import io.jopitel.android.ncalc.ncalcwrap.hjCalcWrapMain
+import org.junit.After
 import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -24,6 +26,16 @@ import org.junit.runner.RunWith
 class hjCalcAppITest {
   val TAG = "[hjjo][ncalc][ncalcwrap]"
   var PACKAGE_NAME = "io.jopitel.android.ncalc.ncalcwrap.test"
+
+  @Before // 각 테스트마다 인스턴스가 매번 다시 생성되어 독립적인 테스트 가능
+  fun setup() {
+    Log.d(TAG, "setup")
+  }
+
+  @After // 후처리 작업
+  fun teardown() {
+    Log.d(TAG, "teardown");
+  }
 
   @Test
   fun useAppContext() {

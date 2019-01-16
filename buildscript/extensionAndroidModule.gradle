@@ -35,23 +35,7 @@ android {
   }
 }
 
-task displayInfo {
-  group 'my'
-  doLast {
-    println '----------------------------------------------'
-    println "- displayInfo"
-    println '----------------------------------------------'
-    println "taskGroup                  : $group"
-    println "rootDir                    : $rootProject.rootDir"
-    println "buildDir                   : $rootProject.buildDir"
-    println "javaVersion                : ${System.getProperty("java.version")}"
-    println "androidParamApplicationId  : module"
-    println "androidParamCompileSdk     : $androidParamCompileSdk"
-    println "androidParamMinSdk         : $androidParamMinSdk"
-    println "androidParamTargetSdk      : $androidParamTargetSdk"
-    println "androidParamVersionCode    : $androidParamVersionCode"
-    println "androidParamVersionName    : $androidParamVersionName"
-    println '----------------------------------------------\n'
-  }
-}
-
+/**
+ * module base plugin
+ */
+apply from: "$rootProject.rootDir/buildscript/extensionAndroidBase.gradle"
