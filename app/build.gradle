@@ -2,16 +2,16 @@
  * android
  */
 ext {
-  androidParamApplicationId = "${gGroupId}.app"
+  paramApplicationId = "${gGroupId}.${project.name}"
   // app info
-  androidParamVersionCode = gVersionCode
-  androidParamVersionName = gVersion
+  paramVersionCode = gVersionCode
+  paramVersionName = gVersion
   // android sdk
-  androidParamCompileSdk = VERSIONS.compileSdk
-  androidParamTargetSdk = VERSIONS.targetSdk
-  androidParamMinSdk = VERSIONS.minSdk
+  paramCompileSdk = VERSIONS.compileSdk
+  paramTargetSdk = VERSIONS.targetSdk
+  paramMinSdk = VERSIONS.minSdk
 }
-apply from: "${rootProject.rootDir}/buildscript/extensionAndroidAppNative.gradle"
+apply from: "${rootProject.rootDir}/buildscript/extAndroidAppNative.gradle"
 
 /**
  * dependencies

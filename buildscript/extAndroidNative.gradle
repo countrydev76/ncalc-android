@@ -6,12 +6,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-  compileSdkVersion androidParamCompileSdk
+  compileSdkVersion paramCompileSdk
   defaultConfig {
-    minSdkVersion androidParamMinSdk
-    targetSdkVersion androidParamTargetSdk
-    versionCode androidParamVersionCode
-    versionName androidParamVersionName
+    minSdkVersion paramMinSdk
+    targetSdkVersion paramTargetSdk
+    versionCode paramVersionCode
+    versionName paramVersionName
 
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -99,4 +99,4 @@ android {
 /**
  * module base plugin
  */
-apply from: "$rootProject.rootDir/buildscript/extensionAndroidBase.gradle"
+apply from: "$rootProject.rootDir/buildscript/extModuleBase.gradle"

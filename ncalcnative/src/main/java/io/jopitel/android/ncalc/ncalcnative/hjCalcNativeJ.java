@@ -13,6 +13,6 @@ public class hjCalcNativeJ {
     return stringFromJNI();
   }
   static {
-    System.loadLibrary("calcnative");
+    System.loadLibrary("ncalcnative");
   }
 }

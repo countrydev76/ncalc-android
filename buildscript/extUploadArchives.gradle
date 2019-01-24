@@ -9,16 +9,16 @@
  * - jar 실행하기 : java -jar ~/Documents/.mavenRepository/io/jopitel/kotlin/ncalc/ncalcpush/1.0.0/ncalcpush-1.0.0.jar
  */
 apply plugin: 'maven'
-group uploadParamGroupId
-version uploadParamVersion
+group paramGroupId
+version paramVersion
 uploadArchives {
   group 'my'
   repositories {
     mavenDeployer {
-      repository(url: uploadParamLocalRepositoryUrl)
+      repository(url: paramLocalRepoUrl)
     }
     // with ssh
-//    repository( url: uploadParamRemoteRepositoryUrl) {
+//    repository( url: paramRemoteRepoUrl) {
 //      authentication(userName: "countrydev76", password: "1111")
 //    }
 
@@ -27,17 +27,7 @@ uploadArchives {
 //        username "username"
 //        password "pw"
 //      }
-//      url extIvyRemoteRepositoryUrl
+//      url extIvyRemoteRepoUrl
 //    }
   }
-
-//  println '----------------------------------------------'
-//  println "- uploadArchives"
-//  println '----------------------------------------------'
-//  println "group                : $group"
-//  println "version              : $version"
-//  println "localRepositoryUrl   : $uploadParamLocalRepositoryUrl"
-//  println "remoteRepositoryUrl  : $uploadParamLocalRepositoryUrl"
-//  println '----------------------------------------------'
-//  println ''
 }

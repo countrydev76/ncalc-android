@@ -19,12 +19,12 @@ task displayModuleInfo {
     println "project.rootDir            : $project.rootDir"
     println "project.buildDir           : $project.buildDir"
     println ""
-    println "androidParamApplicationId  : $androidParamApplicationId"
-    println "androidParamCompileSdk     : $androidParamCompileSdk"
-    println "androidParamMinSdk         : $androidParamMinSdk"
-    println "androidParamTargetSdk      : $androidParamTargetSdk"
-    println "androidParamVersionCode    : $androidParamVersionCode"
-    println "androidParamVersionName    : $androidParamVersionName"
+    println "paramApplicationId         : $paramApplicationId"
+    println "paramCompileSdk            : $paramCompileSdk"
+    println "paramMinSdk                : $paramMinSdk"
+    println "paramTargetSdk             : $paramTargetSdk"
+    println "paramVersionCode           : $paramVersionCode"
+    println "paramVersionName           : $paramVersionName"
     println '----------------------------------------------\n'
   }
 }
@@ -33,20 +33,20 @@ task displayModuleInfo {
  * upload
  */
 ext {
-  uploadParamGroupId = gGroupId
-  uploadParamVersion = gVersion
-  uploadParamLocalRepositoryUrl = ENV.maven.localRepoUrl
-  uploadParamRemoteRepositoryUrl = ENV.maven.removeRepoUrl
+  paramGroupId = gGroupId
+  paramVersion = gVersion
+  paramLocalRepoUrl = ENV.maven.localRepoUrl
+  paramRemoteRepoUrl = ENV.maven.removeRepoUrl
 }
-apply from: "${rootProject.rootDir}/buildscript/extensionUploadArchives.gradle"
+apply from: "${rootProject.rootDir}/buildscript/extUploadArchives.gradle"
 
 /**
  * dokka
  */
 ext {
-  dokkaParamSourceUrl = "${gRepoUrl}/tree/master/src/main/kotlin"
+  paramSourceUrl = "${gRepoUrl}/tree/master/src/main/kotlin"
 }
-apply from: "${rootProject.rootDir}/buildscript/extensionDokka.gradle"
+apply from: "${rootProject.rootDir}/buildscript/extDokka.gradle"
 
 /**
  * bintrayUpload
@@ -72,12 +72,12 @@ apply from: "${rootProject.rootDir}/buildscript/extensionDokka.gradle"
  *
  * $ gradle build bintrayUpload -PbintrayUser=countrydev76 -PbintrayKey=46b8f5530c07758faafd3d376b933ad63ac6c705 -PdryRun=false --info
  */
-// apply from: '../buildscript/extensionBintrayUpload.gradle'
+// apply from: '../buildscript/extBintrayUpload.gradle'
 apply plugin: 'com.novoda.bintray-release'
 publish {
   userOrg = gRepoUserOrg
   groupId = gGroupId
-  artifactId = 'ncalccore'
+  artifactId = project.name
   publishVersion = gVersion
   desc = '4 rules for andorid core'
   website = gRepoUrl
@@ -90,4 +90,4 @@ publish {
  * - https://jojoldu.tistory.com/275
  * - https://proandroiddev.com/unified-code-coverage-for-android-revisited-44789c9b722f
  */
-apply from: "${rootProject.rootDir}/buildscript/extensionCoveralls.gradle"
+apply from: "${rootProject.rootDir}/buildscript/extCoveralls.gradle"

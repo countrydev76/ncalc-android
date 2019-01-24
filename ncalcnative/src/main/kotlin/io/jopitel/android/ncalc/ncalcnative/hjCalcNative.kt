@@ -26,7 +26,7 @@ class hjCalcNative {
   companion object {
     // Used to load the 'native-lib' library on application startup.
     init {
-      System.loadLibrary("calcnative")
+      System.loadLibrary("ncalcnative")
     }
   }
 }

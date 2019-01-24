@@ -32,13 +32,13 @@ android {
     }
   */
 
-  compileSdkVersion androidParamCompileSdk
+  compileSdkVersion paramCompileSdk
   defaultConfig {
-    applicationId androidParamApplicationId
-    minSdkVersion androidParamMinSdk
-    targetSdkVersion androidParamTargetSdk
-    versionCode androidParamVersionCode
-    versionName androidParamVersionName
+    applicationId paramApplicationId
+    minSdkVersion paramMinSdk
+    targetSdkVersion paramTargetSdk
+    versionCode paramVersionCode
+    versionName paramVersionName
 
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
@@ -69,4 +69,4 @@ android {
 /**
  * module base plugin
  */
-apply from: "$rootProject.rootDir/buildscript/extensionAndroidBase.gradle"
+apply from: "$rootProject.rootDir/buildscript/extModuleBase.gradle"
